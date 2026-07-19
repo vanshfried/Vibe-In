@@ -245,18 +245,18 @@ section h2 {
 }
 
 /* Coffee */
-.coffee{
-    background-image:url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80");
+.coffee {
+  background-image: url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80");
 }
 
 /* Bites (Burger & Fries) */
-.bites{
-    background-image:url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80");
+.bites {
+  background-image: url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80");
 }
 
 /* Desserts (Cheesecake) */
-.dessert{
-    background-image:url("https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80");
+.dessert {
+  background-image: url("https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80");
 }
 
 /* Gallery */
@@ -405,75 +405,232 @@ section h2 {
    Tablet & Mobile
 =========================== */
 
+/* =====================================
+   Tablet
+===================================== */
+
 @media (max-width: 768px) {
+  header {
+    height: 85vh;
+  }
+
   nav {
-    padding: 20px 6%;
+    padding: 18px 6%;
   }
 
   .logo {
     font-size: 32px;
   }
 
-  /* Show hamburger */
-
   .menu-btn {
-    display: block !important; /* this rule is missing right now */
+    display: block !important;
+    font-size: 30px;
+    z-index: 1001;
   }
-  /* Hide desktop menu */
+
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    width: 100%;
-    background: #120d09;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 25px 0;
+    justify-content: center;
+    gap: 28px;
+
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+
+    background: #120d09;
+
+    transition: 0.4s ease;
   }
 
-  /* Show after clicking */
   .nav-links.active {
-    display: flex;
+    right: 0;
   }
-}
 
-/* ===========================
-   Small Phones
-=========================== */
+  .nav-links a {
+    font-size: 20px;
+  }
 
-@media (max-width: 480px) {
   .hero h1 {
-    font-size: 46px;
+    font-size: 64px;
   }
 
   .hero h3 {
-    font-size: 20px;
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .card {
+    height: 320px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  section h2 {
+    font-size: 42px;
+  }
+
+  .container {
+    font-size: 17px;
+  }
+}
+/* =====================================
+   Phones
+===================================== */
+
+@media (max-width: 480px) {
+  header {
+    height: 100vh;
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+  }
+
+  .hero h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
   }
 
   .hero p {
     font-size: 15px;
+    margin-bottom: 30px;
   }
 
   .btn {
-    padding: 14px 32px;
+    padding: 14px 30px;
     font-size: 15px;
   }
 
   section {
-    padding: 55px 6%;
+    padding: 55px 20px;
   }
 
   section h2 {
     font-size: 36px;
+    margin-bottom: 30px;
   }
 
   .container {
     font-size: 16px;
   }
 
-  .logo {
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    height: 270px;
+    border-radius: 18px;
+  }
+
+  .card .content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .card h3 {
     font-size: 28px;
   }
+
+  .card li {
+    font-size: 16px;
+    padding: 4px 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .gallery img {
+    height: 220px;
+  }
+
+  #visit p {
+    font-size: 17px;
+  }
+
+  #visit h3 {
+    font-size: 22px;
+  }
+
+  .footer {
+    padding-top: 50px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .footer-column {
+    align-items: center;
+  }
+
+  .footer-column h2 {
+    font-size: 34px;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.menu-btn {
+  transition: 0.3s;
+}
+
+.nav-links a {
+  transition: 0.3s;
+}
+
+.card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.btn {
+  box-shadow: 0 8px 25px rgba(141, 92, 51, 0.3);
 }
